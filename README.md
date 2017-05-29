@@ -65,7 +65,7 @@ docker run
 For running other commands you can just append the command you want after
 the command above.
 
-e.g.
+e.g. for `npm install` run:
 ```
 docker run -ti -v $PWD:/project:rw ionic3 npm install
 ```
@@ -83,7 +83,7 @@ alias ionic3="docker run -ti --privileged -v $PWD:/project:rw -p 8100:8100 -p 35
 
 To run your app on a plugged in device it is better to start a container
 with bash, this will let you connect to the device using `adb` before
-running and `cordova commands`.
+running and `cordova` commands.
 
 ```
 docker run -ti --privileged -v $PWD:/project:rw ionic3 /bin/bash
@@ -92,14 +92,9 @@ ionic cordova run android --device
 ```
 
 
-
-
-
 ## Android SDK Commands
 
-* sdkmanager - Udpate and install sdk packages. See [sdkmanager docs](https://developer.android.com/studio/command-line/sdkmanager.html)
+* sdkmanager - Update and install sdk packages. See [sdkmanager docs](https://developer.android.com/studio/command-line/sdkmanager.html)
 * adb - connect to a device/emulator. See [Android Debug Bridge docs](https://developer.android.com/studio/command-line/adb.html)
 
 > Full list can be found here: [Command Line Tools Guide](https://developer.android.com/studio/command-line/index.html)
------------------------------------------------------------
-
