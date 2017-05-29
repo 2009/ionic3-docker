@@ -8,6 +8,7 @@ This docker image provides the following installed:
 * Cordova CLI (latest)
 * Android SDK (latest)
 
+> For an Android SDK only docker image check out: [thyrlian/AndroidSDK](https://github.com/thyrlian/AndroidSDK)
 
 ## Building the image
 
