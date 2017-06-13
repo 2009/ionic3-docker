@@ -50,14 +50,14 @@ SDK Platforms installed by default.
 Running the following will start `ionic serve` for the current directory:
 
 ```
-docker run -ti --privileged -v $PWD:/project:rw -p 8100:8100 -p 35729:35729 -p 53703:53703 ionic3
+docker run -ti --privileged -v ${PWD}:/project:rw -p 8100:8100 -p 35729:35729 -p 53703:53703 ionic3
 
 # Explanation
 docker run
   -ti                           # interactive tty
   --rm                          # remove the container on exit
   --privileged                  # allow the container to access all devices on the host
-  -v $PWD:/project:rw           # map the current directory to the project directory in the container
+  -v ${PWD}:/project:rw           # map the current directory to the project directory in the container
   -v /dev/bus/usb:/dev/bus/usb  # allows adb to connect to devices that were not present when the container started
   -p 8100:8100                  # default port for ionic serve
   -p 35729:35729 -p 53703:53703 # default ports used for live realod
@@ -70,7 +70,7 @@ the command above.
 
 e.g. for `npm install` run:
 ```
-docker run -ti --rm -v $PWD:/project:rw ionic3 npm install
+docker run -ti --rm -v ${PWD}:/project:rw ionic3 npm install
 ```
 
 ## Alias
@@ -79,7 +79,7 @@ You can alias the docker command to make it easier to run for multiple
 projects:
 
 ```
-alias ionic3="docker run -ti --rm --privileged -v $PWD:/project:rw -v /dev/bus/usb:/dev/bus/usb -p 8100:8100 -p 35729:35729 -p 53703:53703 ionic3"
+alias ionic3="docker run -ti --rm --privileged -v ${PWD}:/project:rw -v /dev/bus/usb:/dev/bus/usb -p 8100:8100 -p 35729:35729 -p 53703:53703 ionic3"
 ```
 
 ## Running on and Android Device
@@ -89,7 +89,7 @@ with bash, this will let you connect to the device using `adb` before
 running any `cordova` commands.
 
 ```
-docker run -ti --rm --privileged -v $PWD:/project:rw -v /dev/bus/usb:/dev/bus/usb ionic3 /bin/bash
+docker run -ti --rm --privileged -v ${PWD}:/project:rw -v /dev/bus/usb:/dev/bus/usb ionic3 /bin/bash
 adb start-server
 ionic cordova run android --device
 ```
